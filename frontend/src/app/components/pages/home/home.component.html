@@ -1,0 +1,23 @@
+<ul>
+  <li *ngFor="let map of maps">
+    <a routerLink="/maps/{{map.id}}">
+      <img [src]="map.imageUrl" [alt]="map.name">
+      <div class="content">
+        <div class="name">
+          {{map.name}}
+        </div>
+        <span class="favorite {{map.favorite ? '' : 'not'}}">
+          ❤
+        </span>
+        <div class="stars">
+          <star-rating [value]="map.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+            [readonly]="true">
+          </star-rating>
+        </div>
+        <div class="price">
+          <span>{{map.price | currency : 'UAH'}}</span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
