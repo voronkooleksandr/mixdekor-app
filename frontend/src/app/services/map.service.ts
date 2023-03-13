@@ -11,4 +11,9 @@ export class MapService {
   getAllMap(): Map[] {
     return dataMaps;
   }
+
+  getAllMapBySearchTerm(searchTerm: string) {
+    return this.getAllMap().filter(map => map.name.toLowerCase()
+      .includes(searchTerm.toLowerCase()));
+  }
 }
