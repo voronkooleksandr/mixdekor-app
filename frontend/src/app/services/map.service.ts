@@ -16,4 +16,8 @@ export class MapService {
     return this.getAllMap().filter(map => map.name.toLowerCase()
       .includes(searchTerm.toLowerCase()));
   }
+
+  getMapById(mapId: string): Map {
+    return this.getAllMap().find(map => map.id === mapId) ?? new Map()
+  }
 }
