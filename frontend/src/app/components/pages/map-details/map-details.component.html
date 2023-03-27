@@ -1,20 +1,20 @@
 <div class="container">
-  <img [src]="maps.imageUrl" [alt]="maps.name"/>
+  <img [src]="map.imageUrl" [alt]="map.name"/>
   <div class="details">
     <div class="header">
       <span class="name">
-        {{maps.name}}
+        {{map.name}}
       </span>
-      <span class="favorite {{maps.favorite ? '' : 'not'}}">❤</span>
+      <span class="favorite {{map.favorite ? '' : 'not'}}">❤</span>
     </div>
     <div class="rating">
-      <star-rating [value]="maps.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="25px"
+      <star-rating [value]="map.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="25px"
         [readonly]="true">
       </star-rating>
     </div>
     <div class="price">
-      <span>{{maps.price | currency : 'UAH'}}</span>
+      <span>{{map.price | currency : 'UAH'}}</span>
     </div>
-    <button>До кошика </button>
+    <button (click)="addToCart()">До кошика </button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Map } from './app/shared/models/map';
+import { Map } from './app/shared/models/Map';
 
 export const dataMaps: Map[] = [
   {
