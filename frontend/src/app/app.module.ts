@@ -4,11 +4,12 @@ import { RatingModule } from 'ng-starrating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { SearchComponent } from './components/search/search.component';
+import { SearchComponent } from './components/partials/search/search.component';
 import { MapDetailsComponent } from './components/pages/map-details/map-details.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { TitleComponent } from './components/partials/title/title.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,11 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
     HomeComponent,
     SearchComponent,
     MapDetailsComponent,
-    CartPageComponent
+    CartPageComponent,
+    TitleComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RatingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, RatingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

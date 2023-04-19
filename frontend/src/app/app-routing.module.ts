@@ -7,7 +7,7 @@ import { MapDetailsComponent } from './components/pages/map-details/map-details.
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent },
-  { path: 'maps/:id', component: MapDetailsComponent },
+  { path: 'map/:id', component: MapDetailsComponent },
   {path: 'cart-page', component: CartPageComponent}
 ];
 
