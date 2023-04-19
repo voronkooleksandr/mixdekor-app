@@ -1,3 +1,7 @@
+<app-not-found
+[visible]="!maps || !maps.length"
+resetLinkText="Скинути пошук">
+</app-not-found>
 <ul>
   <li *ngFor="let map of maps">
     <a routerLink="/map/{{map.id}}">

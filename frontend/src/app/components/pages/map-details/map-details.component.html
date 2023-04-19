@@ -1,4 +1,9 @@
-<div class="container">
+<app-not-found
+[visible]="!map.id"
+notFoundMessage="Мапу не знайдено"
+resetLinkText="Повернутися на головну">
+</app-not-found>
+<div *ngIf="map.id" class="container">
   <img [src]="map.imageUrl" [alt]="map.name"/>
   <div class="details">
     <div class="header">

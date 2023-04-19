@@ -10,6 +10,7 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { MapDetailsComponent } from './components/pages/map-details/map-details.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TitleComponent } from './components/partials/title/title.component';
     MapDetailsComponent,
     CartPageComponent,
     TitleComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RatingModule],
   providers: [],
