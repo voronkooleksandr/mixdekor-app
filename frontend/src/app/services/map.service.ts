@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 import { dataMaps } from 'src/data';
+
+import {
+  MAPS_URL,
+  MAPS_BY_SEARCH_URL,
+  MAPS_BY_ID_URL,
+} from '../shared/constants/urls';
 import { Map } from '../shared/models/Map';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MapService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAllMap(): Map[] {
-    return dataMaps;
+  getAllMap(): Observable<Map[]> {
+    return this.http.get<Map[]>(MAPS_URL);
   }
 
   getAllMapBySearchTerm(searchTerm: string) {
-    return this.getAllMap().filter((map) =>
-      map.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    return this.http.get<Map[]>(MAPS_BY_SEARCH_URL + searchTerm);
   }
 
-  getMapById(mapId: string): Map {
-    return this.getAllMap().find((map) => map.id === mapId) ?? new Map();
+  getMapById(mapId: string): Observable<Map> {
+    return this.http.get<Map>(MAPS_BY_ID_URL + mapId);
   }
 }

@@ -18,7 +18,9 @@ export class MapDetailsComponent {
   private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) {
-        this.map = this.mapService.getMapById(params.id);
+        this.mapService.getMapById(params.id).subscribe((serverMap) => {
+          this.map = serverMap;
+        });
       }
     });
   }
