@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="details">
+    <app-title title="Вкажіть логін та пароль"></app-title>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <div class="input-container">
+        <label>Адреса e-mail:</label>
+        <div>
+          <input type="email" placeholder="Email" formControlName="email">
+        </div>
+      </div>
+
+      <div class="error-list" *ngIf="formControl.email.errors">
+        <div *ngIf="formControl.email.errors.required">Поле не повинно бути пустим</div>
+        <div *ngIf="formControl.email.errors.email"> Пошта є неправильною</div>
+      </div>
+
+      <div class="input-container">
+        <label>Пароль:</label>
+        <div>
+          <input type="password" placeholder="Password" formControlName="password">
+        </div>
+      </div>
+
+        <div class="error-list" *ngIf="formControl.password.errors">
+          <div *ngIf="formControl.password.errors.required">Поле не повинно бути пустим</div>
+
+        </div>
+
+      <div class="button">
+        <button type="submit">Увійти</button>
+      </div>
+    </form>
+
+  </div>
+</div>

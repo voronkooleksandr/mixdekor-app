@@ -50,3 +50,21 @@ export const dataMaps: any[] = [
     producer: 'Mixdekor',
   },
 ];
+
+export const users: any[] = [
+  {
+    name: "Oleksandr Voronko",
+    email: "voronko.oleksandr@gmail.com",
+    password: "7777777",
+    address: "Lviv",
+    isAdmin: true,
+  },
+  {
+    name: "Oleksandr Voron",
+    email: "voronko_o@ukr.net",
+    password: "1111111",
+    address: "Vynnyky",
+    isAdmin: false,
+  },
+];
+

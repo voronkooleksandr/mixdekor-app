@@ -1,8 +1,11 @@
 import express from "express";
 import cors from "cors";
-import { dataMaps } from "./data";
+import { dataMaps, users } from "./data";
+import jwt from 'jsonwebtoken';
 
 const app = express();
+
+app.use(express.json())
 
 app.use(cors({
   credentials: true,
@@ -32,3 +35,26 @@ app.get("/api/maps/:mapId", (req, res) => {
   const map = dataMaps.find((map) => map.id === mapId);
   res.send(map);
 })
+
+app.post("/api/users/login", (req, res) => {
+  const {email, password} = req.body;
+  const user = users.find(
+    (user) => user.email === email && user.password === password);
+  
+  if (user) {
+    res.send(generateTokkinResponse(user));
+  } else {
+    res.status(400).send("Ім'я користувача або пароль неправильні")
+  }
+})
+
+const generateTokkinResponse = (user: any) => {
+  const token = jwt.sign({
+    email: user.email, isAdmin: user.isAdmin
+  }, 'SomeRandomText', {
+    expiresIn: "30days"
+  });
+
+  user.token = token;
+  return user;
+}
