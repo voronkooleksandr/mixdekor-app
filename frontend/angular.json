@@ -5,7 +5,7 @@
   "projects": {
     "frontend": {
       "projectType": "application",
-      "schematics": {
+       "schematics": {
         "skipSelector": true
       },
       "root": "",
